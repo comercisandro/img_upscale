@@ -16,7 +16,7 @@ folders='inputs/'
 
 folder=os.listdir(path=folders)
 
-#print(folder)
+
 
 for i in folder:
 
