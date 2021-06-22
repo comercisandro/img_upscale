@@ -1,11 +1,10 @@
-from functions.open_img import open_img
 import numpy as np
-from PIL import Image
-from skimage import io
-from pathlib import Path
 import os
 
+from functions.open_img import open_img
 from functions.save_img import save_img
+from functions.img_a_procesar import img_a_procesar
+
 from network.upscale import upscale
 
 import time
@@ -21,20 +20,8 @@ folder=os.listdir(path=folders)
 
 for i in folder:
 
-    times=i
-
-    img_path='inputs/'+times+'/'
-
-    inputs=os.listdir(path=img_path)
-
-    cantidad_archivos=0
-    for i in range(len(inputs)):
-        cantidad_archivos+=1
-
-    print(times+'\n')
     
-    print('Cantidad de imagenes a procesar:', cantidad_archivos)
-        
+    inputs, img_path, times, cantidad_archivos=img_a_procesar(i)
 
     
     for i in inputs:

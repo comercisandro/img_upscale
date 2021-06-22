@@ -7,7 +7,7 @@ def save_img(img_upscaled,img_name, times):
     
     Path(path).mkdir(parents=True, exist_ok=True)
     
-    io.imsave(path+times+img_name+'.jpg', img_upscaled)
+    io.imsave(path+times+img_name, img_upscaled)
     
     print('Procesada con exito'+'\n')
     
