@@ -17,7 +17,7 @@ folders='inputs/'
 
 folder=os.listdir(path=folders)
 
-print(folder)
+#print(folder)
 
 for i in folder:
 
@@ -33,7 +33,7 @@ for i in folder:
 
     print(times+'\n')
     
-    print('Cantidad de imagenes a procesar:', cantidad_archivos+'\n')
+    print('Cantidad de imagenes a procesar:', cantidad_archivos)
         
 
     
