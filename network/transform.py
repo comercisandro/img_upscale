@@ -5,13 +5,11 @@ from network.resize import resize
 
 
 
-
-
 def transform(image):
  
 #·······························································#
 #                                                               #
-#                       960x540                                 #
+#                        16/9                                   #
 #                                                               #
 #·······························································#
     
@@ -43,4 +41,33 @@ def transform(image):
         img_resize=resize(img_upscale, dim)
         
         
+        return img_resize
+    
+    
+    if image.size==(1920,180):
+        pass
+    
+    
+#·······························································#
+#                                                               #
+#                        4/3                                    #
+#                                                               #
+#·······························································#
+
+    if image.size==(1300,975):
+        pass
+    
+    
+    
+    if image.size==(800,600) :
+        
+        up_x='x2'
+        
+        img_upscale=upscale(up_x, image)
+        
+        dim=(1300,975)
+        
+        img_resize=resize(img_upscale, dim)
+        
+
         return img_resize
