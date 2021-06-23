@@ -1,13 +1,14 @@
-from skimage import io
 from pathlib import Path
 
-def save_img(img_upscaled,img_name, times):
+
+def save_img(img_name, img_upscaled):
     
     path=('outputs/')
     
     Path(path).mkdir(parents=True, exist_ok=True)
     
-    io.imsave(path+times+img_name, img_upscaled)
+    img_upscaled.save(path+img_name)
+
     
     print('Procesada con exito'+'\n')
     

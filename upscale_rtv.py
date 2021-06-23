@@ -1,48 +1,46 @@
-import numpy as np
-import os
+from network.transform import transform
 
-from functions.open_img import open_img
 from functions.save_img import save_img
+from functions.open_img import open_img
 from functions.img_a_procesar import img_a_procesar
 
-from network.upscale import upscale
+import os
 
 import time
+
+
+
+
 inicio = time.time()
 
-folders='inputs/'
+
+path='inputs/'
+
+cantidad_archivos=img_a_procesar(path)
+
+
+img=os.listdir(path=path)
 
 
 
-folder=os.listdir(path=folders)
+for i in img:
 
 
-
-for i in folder:
-
+    imagen = open_img(i,path)
     
-    inputs, img_path, times, cantidad_archivos=img_a_procesar(i)
-
     
-    for i in inputs:
+    img_transform=transform(imagen)
     
-        img = open_img(i,img_path)
-        
-        lr_img = np.array(img)
 
-        result=upscale(times, lr_img)
-        
-        save_img(result,i,times)
-        
-        
-        
-        cantidad_archivos-=1
-        
-        print('Imagenes restantes', cantidad_archivos)  
+    save_img(i, img_transform)
+    
+    
+    
+    cantidad_archivos-=1
+    
+    print('Imagenes restantes', cantidad_archivos)  
         
         
-        
-        
-        
+
 fin = time.time()
 print('Tiempo de ejecucion', (fin-inicio)/60 ) 
