@@ -9,8 +9,6 @@ import os
 import time
 
 
-
-
 inicio = time.time()
 
 

@@ -71,3 +71,4 @@ def transform(image):
         
 
         return img_resize
+    
