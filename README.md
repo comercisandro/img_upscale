@@ -1,3 +1,3 @@
 # img_upscale
 
-Modelo deep learning para aumentar dimensión de imágenes
+Modelo deep learning para aumentar la dimensión de imágenes
